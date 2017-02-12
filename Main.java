@@ -22,6 +22,14 @@ class Donut {
     float ri;
 };
 
+class Con{
+
+    float radi;
+    float generatriu;
+    float vr;
+    float vg;
+};
+
 public class Main {
 
     public static void main(String[] args) {
@@ -38,17 +46,21 @@ public class Main {
         d.re=3;
         d.ri=3;
 
+        Con co = new Con();
+        co.radi=4;
+        co.generatriu=3;
+
         String opcio;
         while(true){
             System.out.println("Area cercle: " + 2*Math.PI*c.radi);
             System.out.println("Area rectangle: " + r.base*r.altura);
             System.out.println("Area donut: " + (2*Math.PI*d.re - 2*Math.PI*d.ri));
-            System.out.println("Nova figura : "+(2));
+            System.out.println("Area con : "+(Math.PI*co.radi*co.generatriu+Math.PI*Math.pow(co.radi,2)));
 
             System.out.println("a Redimensionar cercle");
             System.out.println("b Redimensionar rectangle");
             System.out.println("c Redimensionar donut");
-            System.out.println("d Redimensionar Nova Figura");
+            System.out.println("d Redimensionar con");
 
             opcio = scanner.nextLine();
             switch (opcio){
@@ -107,7 +119,28 @@ public class Main {
                     }
                     break;
 
-                // TODO: implementar la redimensió de la nova figura
+                case "d":
+
+                    System.out.println("Introdueix variacio radi: ");
+                    co.vr=scanner.nextFloat();
+                    scanner.nextLine();
+                    if(co.vr>0){
+                            co.radi+=co.vr;
+                    }
+                    else{
+                        System.out.println("Variacio del radi incorrecta. El radi no pot ser negatiu");
+                    }
+
+                    System.out.println("Introdueix variacio generatriu: ");
+                    co.vg=scanner.nextFloat();
+                    scanner.nextLine();
+                    if(co.vg>0){
+                        co.generatriu+=co.vg;
+                    }
+                    else{
+                        System.out.println("Variacio de la generatriu incorrecta. La generatriu no pot ser negativa");
+                    }
+
             }
         }
     }
