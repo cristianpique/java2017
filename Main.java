@@ -20,6 +20,8 @@ class Donut {
 
     float re;
     float ri;
+    float vre;
+    float vri;
 };
 
 class Con{
@@ -79,43 +81,43 @@ public class Main {
                     System.out.println("Variació de la base: ");
                     r.variaciob = scanner.nextFloat();
                     scanner.nextLine();
-                    if(r.variaciob>0) {
+                    if(r.base+r.variaciob > 0) {
                         r.base += r.variaciob;
                     }
                     else{
-                        System.out.println("Variacio de la base incorrecta. No pot ser un nombre negatiu. ");
+                        System.out.println("La Base del Rectangle no s'ha modificat: La base no pot ser negativa. ");
                     }
 
                     System.out.println("Variació de l'altura: ");
                     r.variacioa = scanner.nextFloat();
                     scanner.nextLine();
-                    if(r.variacioa>0) {
+                    if(r.altura+r.variacioa > 0) {
                         r.altura += r.variacioa;
                     }
                     else{
-                        System.out.println("Variacio de l'altura incorrecta. No pot ser un nombre negatiu. ");
+                        System.out.println("L'Altura del Rectangle no s'ha modificat: L'altura no pot ser negativa. ");
                 }
                     break;
 
                 case "c":
                     System.out.println("Introdueix variacio radi exterior: ");
-                    d.re=scanner.nextFloat();
+                    d.vre=scanner.nextFloat();
                     scanner.nextLine();
-                    if(d.re>d.ri){
-                        d.ri +=d.re;
+                    if(d.re+d.vre>d.ri){
+                        d.re +=d.vre;
                     }
                     else{
-                        System.out.println("Variacio del radi exterior incorrecta. El valor no pot ser negatiu");
+                        System.out.println("El radi exterior no s'ha modificat: El Radi Exterior no pot ser negatiu");
                     }
 
                     System.out.println("Introdueix variacio radi interior: ");
-                    d.ri=scanner.nextFloat();
+                    d.vri=scanner.nextFloat();
                     scanner.nextLine();
-                    if(d.ri<d.re) {
-                        d.re +=d.ri;
+                    if(d.ri+d.vri<d.re) {
+                        d.ri +=d.vri;
                     }
                     else{
-                        System.out.println("Variacio del radi interior incorrecta. El valor no pot ser negatiu");
+                        System.out.println("El radi interior no s'ha modificat. El Radi Interior no pot ser negatiu");
                     }
                     break;
 
@@ -124,21 +126,21 @@ public class Main {
                     System.out.println("Introdueix variacio radi: ");
                     co.vr=scanner.nextFloat();
                     scanner.nextLine();
-                    if(co.vr>0){
+                    if(co.radi+co.vr > 0){
                             co.radi+=co.vr;
                     }
                     else{
-                        System.out.println("Variacio del radi incorrecta. El radi no pot ser negatiu");
+                        System.out.println("El radi no s'ha modificat. El Radi no pot ser negatiu");
                     }
 
                     System.out.println("Introdueix variacio generatriu: ");
                     co.vg=scanner.nextFloat();
                     scanner.nextLine();
-                    if(co.vg>0){
+                    if(co.generatriu+co.vg > 0){
                         co.generatriu+=co.vg;
                     }
                     else{
-                        System.out.println("Variacio de la generatriu incorrecta. La generatriu no pot ser negativa");
+                        System.out.println("La generatriu no s'ha modificat. La Generatriu no pot ser negativa");
                     }
 
             }
