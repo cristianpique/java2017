@@ -67,7 +67,7 @@ class Player {
     }
 }
 
-public class Main {
+public class E3 {
     public static void main(String[] args) {
 
         Player player1 = new Player(); /* Faltava instanciar la clase,ja que nomes s'havia declarat la clase sense instanciarla */
